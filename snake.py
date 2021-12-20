@@ -1,4 +1,5 @@
 from microbit import *
+from random import randint
 
 # Directions
 UP = 0
@@ -6,12 +7,12 @@ RIGHT = 1
 DOWN = 2
 LEFT = 3
 
-# Screen size
+# Taille de l'ecran
 screen_size = 5
 
-# Snake light intensity
+# Intensite lumineuse pour le serpent
 SN_LIGHT = 9
-# Apple light intensity
+# Intensite lumineuse pour la pomme
 APP_LIGHT = 5
 
 
@@ -28,7 +29,11 @@ def new_direction(dir):
     """
     Choose the new direction
     """
-    # TODO: Change the direction if button A or B is pressed
+    # TODO: Change la direction en fonction des boutons A, B et de la 
+    # direction donnee
+
+    # Si on appuie sur le bouton A, on tourne a gauche.
+    # Si on appuie sur le bouton B, on tourne a droite.
     return UP
 
 
@@ -36,28 +41,38 @@ def new_head(snake, dir):
     """
     Return the tuple (x, y) of the new head
     """
-    # TODO: Give the new head dependign on the direction of the current head
+    # TODO: Choisi une nouvelle direction en fonction de la direction donnee
+    # et de la tete
     return (0, 0)
 
 
+# La tete du serpent est le premier element de la liste
+# La queue est le dernier element
 snake = [(2, 2)]
 snake_len = 1
 dir = UP
 apple = None
 
-while snake_len:
+# Tant que le serpent ne rempli pas toutes les cases
+while snake_len < 25:
 
-    # TODO: Change the direction
+    # TODO: Si la pomme n'existe pas (None), choisi une place aleatoire pour
+    # la pomme
 
-    # TODO: Find the new head of the snake
+    # TODO: Change la direction
 
-    # TODO: Add the new head to the snake
+    # TODO: Trouve la nouvelle tete du serpent
 
-    # TODO: If new head touch the apple, increase the length
+    # TODO: Ajoute la nouvelle tete au serpent (insere la tete en position 0)
 
-    # TODO: Choose a new coordinates for the apple
+    # TODO: Si la nouvelle tete est sur la pomme, agrandi la taille du serpent
+    # Et retire la pomme de la grille (None)
+
 
     display.clear()
-    # TODO: Display the apple
-    # TODO: Display the snake
+    # TODO: Affiche la pomme
+    # TODO: Affiche le serpent
     sleep(500)
+
+
+# TODO: Affiche un message de victoire/defaire en fonction du score (25 = gagne)
