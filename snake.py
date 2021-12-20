@@ -23,12 +23,21 @@ def draw_snake(snake):
         for j in range(screen_size):
             display.set_pixel(j, i, SN_LIGHT)
 
+
 def new_direction(dir):
     """
     Choose the new direction
     """
-    # TODO : Change the direction if button A or B is pressed
+    # TODO: Change the direction if button A or B is pressed
+    return UP
 
+
+def new_head(snake, dir):
+    """
+    Return the tuple (x, y) of the new head
+    """
+    # TODO: Give the new head dependign on the direction of the current head
+    return (0, 0)
 
 
 snake = [(2, 2)]
